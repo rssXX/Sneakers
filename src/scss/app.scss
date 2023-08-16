@@ -1,0 +1,20 @@
+@import "./variables";
+@import "./components/all";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $font;
+}
+
+h1 {
+    font-size: xxx-large;
+}
+
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
