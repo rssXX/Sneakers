@@ -18,6 +18,10 @@ header {
         &:hover{
             color: $red;
         }
+
+        &.active{
+            color: $red;
+        }
     }
 
     nav{

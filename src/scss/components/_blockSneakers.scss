@@ -5,6 +5,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
 
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
     .card {
       cursor: pointer;
 
@@ -29,15 +34,15 @@
         transform: translateY(-10px)
       }
 
-      img{
+      img {
         border-radius: 40px;
       }
 
-      .title{
+      .title {
         font-size: 16px;
       }
 
-      .price{
+      .price {
         color: grey;
       }
     }

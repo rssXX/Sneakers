@@ -1,6 +1,7 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {Divider} from "antd";
+import {ShoppingCartOutlined} from "@ant-design/icons";
 
 const Header: React.FC = () => {
     return (
@@ -13,7 +14,9 @@ const Header: React.FC = () => {
                 </div>
                 <nav>
                     <ul>
-                        <li>Cart</li>
+                        <NavLink to="/cart" >
+                            <ShoppingCartOutlined style={{ fontSize: "30px" }} />
+                        </NavLink>
                         <li>User</li>
                     </ul>
                 </nav>
