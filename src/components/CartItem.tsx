@@ -1,8 +1,17 @@
 import React from 'react';
-import {cartSneaker} from "../redux/cart/types.ts";
 import { Button } from 'antd';
 
-const CartItem: React.FC<cartSneaker> = ({id, imageName, title, count, price}) => {
+interface cartProps {
+    id: number,
+    imageName: string,
+    title: string,
+    price: number,
+    count: number,
+    clickAdd: any,
+    clickMinus: any,
+}
+
+const CartItem: React.FC<cartProps> = ({id, imageName, title, count, price, clickAdd, clickMinus }) => {
     return (
         <div className="cart-item">
             <div>
@@ -13,11 +22,11 @@ const CartItem: React.FC<cartSneaker> = ({id, imageName, title, count, price}) =
                 <p>{price} руб.</p>
             </div>
             <div className="block-btn-plus-minus">
-                <Button type="primary" shape="circle" danger>
-                    +
+                <Button type="primary" shape="circle" danger onClick={() => clickMinus(id)} disabled={count <= 1 && true }>
+                    -
                 </Button>
                 {count}
-                <Button type="primary" shape="circle">
+                <Button type="primary" shape="circle" onClick={() => clickAdd(id)}>
                     +
                 </Button>
             </div>

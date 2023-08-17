@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {selectCart} from "../redux/cart/selector.ts";
 import {List, Button} from "antd";
 import {useAppDispatch} from "../redux/store.ts";
-import {plusCountItemCart} from "../redux/cart/slice.ts";
+import {clearCart, minusCountItemCart, plusCountItemCart} from "../redux/cart/slice.ts";
 import CartItem from "../components/CartItem.tsx";
 
 const Cart: React.FC = () => {
@@ -14,12 +14,18 @@ const Cart: React.FC = () => {
     const clickAdd = (id: number) => {
         dispatch(plusCountItemCart(id))
     }
+    const clickMinus = (id: number) => {
+        dispatch(minusCountItemCart(id))
+    }
+    const clickClear = () => {
+        dispatch(clearCart())
+    }
 
     return (
         <div>
             <div>
                 <h2>Корзина</h2>
-                <Button>Очистить корзину</Button>
+                <Button onClick={clickClear}>Очистить корзину</Button>
             </div>
             <div className="list-cart">
                 {
@@ -33,6 +39,8 @@ const Cart: React.FC = () => {
                                     imageName={item.imageName}
                                     count={item.count}
                                     price={item.price}
+                                    clickAdd={clickAdd}
+                                    clickMinus={clickMinus}
                                 />
                             )
                         })
