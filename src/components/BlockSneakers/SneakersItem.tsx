@@ -1,8 +1,14 @@
 import React from 'react';
-import {Sneakers} from "../../redux/sneakers/types.ts";
 import {Link} from "react-router-dom";
 
-const SneakersItem: React.FC<Sneakers> = ({id, imageName, title, brand, price, rating, body, sizes}) => {
+interface itemProps {
+    id: number,
+    imageName: string,
+    title: string,
+    price: number,
+}
+
+const SneakersItem: React.FC<itemProps> = ({id, imageName, title, price }) => {
 
 
     return (

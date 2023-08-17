@@ -37,11 +37,7 @@ const BlockSneakers: React.FC<blockType> = ({ page, onChangePagination }) => {
                                     id={item.id}
                                     imageName={item.imageName}
                                     title={item.title}
-                                    brand={item.brand}
                                     price={item.price}
-                                    rating={item.rating}
-                                    body={item.body}
-                                    sizes={item.sizes}
                                 />
                             })
                         )

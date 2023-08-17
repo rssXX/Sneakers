@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {selectCart} from "../redux/cart/selector.ts";
-import {List, Button} from "antd";
+import {Button} from "antd";
 import {useAppDispatch} from "../redux/store.ts";
 import {clearCart, minusCountItemCart, plusCountItemCart} from "../redux/cart/slice.ts";
 import CartItem from "../components/CartItem.tsx";
