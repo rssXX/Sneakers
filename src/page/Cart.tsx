@@ -1,33 +1,47 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {selectCart} from "../redux/cart/selector.ts";
-import { List, Button } from "antd";
+import {List, Button} from "antd";
+import {useAppDispatch} from "../redux/store.ts";
+import {plusCountItemCart} from "../redux/cart/slice.ts";
+import CartItem from "../components/CartItem.tsx";
 
 const Cart: React.FC = () => {
-    const { items} = useSelector(selectCart)
+    const dispatch = useAppDispatch()
+    const {items} = useSelector(selectCart)
     console.log(items)
+
+    const clickAdd = (id: number) => {
+        dispatch(plusCountItemCart(id))
+    }
+
     return (
         <div>
             <div>
                 <h2>Корзина</h2>
                 <Button>Очистить корзину</Button>
             </div>
-            <List
-                itemLayout="horizontal"
-                dataSource={items}
-                renderItem={(item, index) => (
-                    <List.Item>
-                        <img src={`/img/sneakers/${item.imageName}`} alt={item.title} />
-                        <p>{item.title}</p>
-                        <p>{item.price}</p>
-                        <button>-</button>
-                        <span>{item.count}</span>
-                        <button>+</button>
-                        <p>{item.price * item.count}</p>
-                    </List.Item>
-                )}
-            />
-            <Button type="primary" style={{ backgroundColor: "green" }}>
+            <div className="list-cart">
+                {
+                    items.length >= 1 ? (
+                        items.map(item => {
+                            return (
+                                <CartItem
+                                    key={`cart item ${item.id}`}
+                                    id={item.id}
+                                    title={item.title}
+                                    imageName={item.imageName}
+                                    count={item.count}
+                                    price={item.price}
+                                />
+                            )
+                        })
+                    ) : (
+                        <p>Корзина пустая</p>
+                    )
+                }
+            </div>
+            <Button type="primary" style={{backgroundColor: "green"}}>
                 Купить
             </Button>
         </div>

@@ -1,0 +1,23 @@
+.list-cart{
+  width: 700px;
+  margin: 20px auto;
+  overflow: auto; /* Добавляем полосы прокрутки */
+  height: 500px;
+  .cart-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    div{
+      width: 175px;
+    }
+
+    .block-btn-plus-minus{
+      button{
+        margin: 0 10px;
+      }
+    }
+  }
+}

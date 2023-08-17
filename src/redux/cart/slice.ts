@@ -18,9 +18,16 @@ export const cartSlice = createSlice({
                 state.items.push({...action.payload, count: 1})
             }
         },
+        plusCountItemCart: (state, action: PayloadAction<number>) => {
+            const data = state.items.find(item => item.id === action.payload)
+
+            if (data){
+                data.count++
+            }
+        },
     },
 })
 
-export const { addItemCart } = cartSlice.actions
+export const { addItemCart, plusCountItemCart } = cartSlice.actions
 
 export default cartSlice.reducer
