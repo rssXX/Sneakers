@@ -5,7 +5,7 @@ import Cart from "../page/Cart.tsx";
 
 const routers = [
     {
-        path: "sneakers",
+        path: "sneakers/",
         element: <Home/>,
     },
     {
