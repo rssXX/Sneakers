@@ -15,7 +15,7 @@ const CartItem: React.FC<cartProps> = ({id, imageName, title, count, price, clic
     return (
         <div className="cart-item">
             <div>
-                <img src={`/img/sneakers/${imageName}`} alt={title}/>
+                <img src={`./img/sneakers/${imageName}`} alt={title}/>
             </div>
             <div>
                 <p>{title}</p>

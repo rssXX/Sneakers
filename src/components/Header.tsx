@@ -8,13 +8,13 @@ const Header: React.FC = () => {
         <header>
             <div className="wrapper">
                 <div>
-                    <Link to="/">
+                    <Link to="sneakers">
                         <h1>Sneakers</h1>
                     </Link>
                 </div>
                 <nav>
                     <ul>
-                        <NavLink to="/cart" >
+                        <NavLink to="sneakers/cart" >
                             <ShoppingCartOutlined style={{ fontSize: "30px" }} />
                         </NavLink>
                         <li>User</li>

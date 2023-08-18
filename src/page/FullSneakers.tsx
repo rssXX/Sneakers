@@ -62,7 +62,7 @@ const FullSneakers: React.FC = () => {
                         <div className="left">
                             <Image
                                 width={200}
-                                src={`/img/sneakers/${item.imageName}`}
+                                src={`./img/sneakers/${item.imageName}`}
                             />
                         </div>
                         <div className="right">

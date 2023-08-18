@@ -15,7 +15,7 @@ const SneakersItem: React.FC<itemProps> = ({id, imageName, title, price }) => {
         <Link to={`/sneakers/${id}`}>
             <div className="card">
                 <div>
-                    <img src={`/img/sneakers/${imageName}`} alt={title}/>
+                    <img src={`./img/sneakers/${imageName}`} alt={title}/>
                     <p className="title">{title}</p>
                 </div>
                 <div>
