@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import {selectFilter} from "../redux/filter/selector.ts";
 import type { PaginationProps } from 'antd';
 import {setPage} from "../redux/filter/slice.ts";
+import BlockCarousel from "../components/Carousel/BlockCarousel.tsx";
 
 const Home: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
 
     return (
         <div>
+            <BlockCarousel/>
             <BlockSneakers page={page} onChangePagination={onChange} />
         </div>
     )

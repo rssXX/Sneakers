@@ -1,0 +1,57 @@
+@import "../variables";
+
+.carousel-block{
+  .carousel{
+    max-height: 350px;
+    min-width: 600px;
+
+    .carousel-item{
+      height: 350px;
+      margin: 0 10px;
+      padding-left: 30px;
+      padding-right: 30px;
+      background-color: #F4EFE9;
+
+      .carousel-item-right{
+        padding-top: 30px;
+
+        span{
+          font-family: $font;
+          font-size: 25px;
+        }
+        h3{
+          font-size: 35px
+        }
+        .price{
+          font-family: $font;
+          font-size: 25px;
+        }
+      }
+      .carousel-item-left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .carousel-down-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 0 0;
+
+    button{
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      background-color: #6E6C6C;
+      border: 0;
+      transform: rotate(45deg);
+
+      &.active{
+        background-color: $red;
+      }
+    }
+  }
+}
