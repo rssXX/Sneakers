@@ -41,7 +41,7 @@ const FullSneakers: React.FC = () => {
 
     const errorNotification = (error: string) => {
         alert(error)
-        navigate('/')
+        navigate('/sneakers/')
     }
 
     const clickAddItem = () => {

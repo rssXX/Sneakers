@@ -5,15 +5,15 @@ import Cart from "../page/Cart.tsx";
 
 const routers = [
     {
-        path: "sneakers/",
+        path: "/",
         element: <Home/>,
     },
     {
-        path: "sneakers/:id",
+        path: "/sneakers/:id",
         element: <FullSneakers/>,
     },
     {
-        path: "sneakers/cart",
+        path: "/cart",
         element: <Cart/>,
     },
 ]

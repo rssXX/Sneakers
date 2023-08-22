@@ -2,17 +2,19 @@
 
 .carousel-block{
   .carousel{
-    max-height: 350px;
+    height: 350px;
     min-width: 600px;
 
     .carousel-item{
       height: 350px;
       margin: 0 10px;
+
       padding-left: 30px;
       padding-right: 30px;
+
       background-color: #F4EFE9;
 
-      .carousel-item-right{
+      .carousel-item-left{
         padding-top: 30px;
 
         span{
@@ -27,10 +29,14 @@
           font-size: 25px;
         }
       }
-      .carousel-item-left{
+      .carousel-item-right{
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        img{
+          cursor: pointer;
+        }
       }
     }
   }
@@ -42,6 +48,8 @@
     margin: 5px 0 0 0;
 
     button{
+      cursor: pointer;
+
       width: 10px;
       height: 10px;
       margin: 5px;

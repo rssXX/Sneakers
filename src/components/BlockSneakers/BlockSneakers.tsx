@@ -4,7 +4,11 @@ import {selectSneakers} from "../../redux/sneakers/selector.ts";
 import SneakersItem from "./SneakersItem.tsx";
 import Sceleton from "./Sceleton.tsx";
 import {Status} from "../../redux/sneakers/types.ts";
-import { Pagination } from 'antd';
+import { Pagination, Input } from 'antd';
+import {useAppDispatch} from "../../redux/store.ts";
+import {setSearch} from "../../redux/filter/slice.ts";
+
+const { Search } = Input;
 
 interface blockType {
     page: number,
@@ -13,6 +17,9 @@ interface blockType {
 
 const BlockSneakers: React.FC<blockType> = ({ page, onChangePagination }) => {
     const {items, status} = useSelector(selectSneakers);
+    const dispatch = useAppDispatch()
+
+    const onSearch = (value: string) => dispatch(setSearch(value));
 
     if (status === Status.REJECT){
         return (
@@ -23,7 +30,10 @@ const BlockSneakers: React.FC<blockType> = ({ page, onChangePagination }) => {
     return (
         <div className="block-sneakers">
             <aside>
-                <h3>Кроссовки</h3>
+                <div className="header">
+                    <h3 style={{ fontSize: "xx-large" }}>Кроссовки</h3>
+                    <Search placeholder="Поиск" enterButton className="search" onSearch={onSearch} loading={status === Status.LOADING}/>
+                </div>
                 <div className="cards">
                     {
                         status === Status.LOADING ? (

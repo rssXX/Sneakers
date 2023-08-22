@@ -3,18 +3,24 @@ import {Carousel} from 'antd';
 import data from "../../assets/carousel.json";
 import ItemCarousel from "./ItemCarousel.tsx";
 import type { CarouselRef } from "antd/es/carousel";
+import {useNavigate} from "react-router-dom";
 
 const BlockCarousel: React.FC = () => {
     const ref = React.useRef<CarouselRef>(null);
+    const navigate = useNavigate()
     const [value, setValue] = React.useState<number>(0);
 
     const goTo = (slide: number) => {
         ref.current?.goTo(slide, false);
     };
 
-    const setSlide = (current: number, next: number) => {
-        setValue(next);
+    const setSlide = (current: number) => {
+        setValue(current);
     };
+
+    const clickCarouselItem = (id: number) => {
+        navigate(`/sneakers/${id}`)
+    }
 
     return (
         <div className="carousel-block">
@@ -23,9 +29,9 @@ const BlockCarousel: React.FC = () => {
                 className="carousel"
                 pauseOnHover
                 draggable
-                // autoplay
+                autoplay
                 dots={false}
-                beforeChange={setSlide}
+                afterChange={setSlide}
             >
                 {
                     data.map(item => {
@@ -36,6 +42,7 @@ const BlockCarousel: React.FC = () => {
                             title={item.title}
                             brand={item.brand}
                             price={item.price}
+                            clickCarouselItem={clickCarouselItem}
                         />
                     })
                 }

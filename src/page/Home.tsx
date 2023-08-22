@@ -10,15 +10,15 @@ import BlockCarousel from "../components/Carousel/BlockCarousel.tsx";
 
 const Home: React.FC = () => {
     const dispatch = useAppDispatch()
-    const { page} = useSelector(selectFilter);
+    const { page, search} = useSelector(selectFilter);
 
     const getSneakers = async () => {
-        dispatch(fetchSneaker({ page }))
+        dispatch(fetchSneaker({ page, search }))
     }
 
     useEffect(() => {
         getSneakers()
-    }, [page])
+    }, [page, search])
 
     const onChange: PaginationProps['onChange'] = (page) => {
         dispatch(setPage(page))

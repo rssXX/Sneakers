@@ -1,4 +1,15 @@
 .block-sneakers {
+  .header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .search{
+      width: 250px;
+    }
+  }
+
   .cards {
     display: flex;
     flex-direction: row;
